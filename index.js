@@ -1,19 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import './index.css';
+import reportWebVitals from './reportWebVitals';
 
-const MovieTile = (props) => {
-    const { title, poster, actors, onMovieClick } = props;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  
+);
 
-    const imgStyle = {
-        backgroundImage: `url(${poster})`
-    }
-
-    return (
-        <div className="tileContainer" onClick={onMovieClick}>
-            <div className="tileContent" style={imgStyle} />
-            <div>{title}</div>
-            <div className="actorsText">{actors}</div>
-        </div>
-    )
-};
-
-export default MovieTile;
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+//       //
