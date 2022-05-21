@@ -1,19 +1,19 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './index.css';
 
-import Home from '../components/Home';
-import MovieDetail from '../components/MovieDetail';
-import SeatSelection from '../components/SeatSelection';
+const MovieTile = (props) => {
+    const { title, poster, actors, onMovieClick } = props;
 
-export const Routes = () => (
-    <Router>
-        <Route exact path='/movie-ticket-booking-ui/'>
-            <Home />
-        </Route>
-        <Route exact path='/movie-ticket-booking-ui/details'>
-            <MovieDetail />
-        </Route>
-        <Route exact path='/movie-ticket-booking-ui/seats'>
-            <SeatSelection />
-        </Route>
-    </Router>
-)
+    const imgStyle = {
+        backgroundImage: `url(${poster})`
+    }
+
+    return (
+        <div className="tileContainer" onClick={onMovieClick}>
+            <div className="tileContent" style={imgStyle} />
+            <div>{title}</div>
+            <div className="actorsText">{actors}</div>
+        </div>
+    )
+};
+
+export default MovieTile;
